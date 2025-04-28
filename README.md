@@ -20,7 +20,7 @@ Acquire access token—
 ```go
 rtOut, err = sfquery.RequestOauth2Token(
     "{yourinstance}.salesforce.com",
-    RequestOauth2TokenIn{
+    sfquery.RequestOauth2TokenIn{
         GrantType:    "client_credentials",
         ClientId:     "{your Client ID here}",
         ClientSecret: "{your Client Secret here}",
