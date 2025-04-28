@@ -45,6 +45,6 @@ records, err := sfquery.TypedQueryMultipage[TestContact](
     "select Id, LastName from Contact",
 )
 if err != nil {
-    t.Fatal(err)
+    panic(err)
 }
 ```
