@@ -50,11 +50,11 @@ func RequestOauth2Token(sfDomainName string, in RequestOauth2TokenIn) (*RequestO
 	if err != nil {
 		return nil, err
 	}
-	if resp.StatusCode != 200 {
-		return nil, fmt.Errorf("received status code %d", resp.StatusCode)
-	}
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
+	if resp.StatusCode != 200 {
+		return nil, fmt.Errorf("received status code %d: %s", resp.StatusCode, string(body))
+	}
 	if err != nil {
 		return nil, err
 	}

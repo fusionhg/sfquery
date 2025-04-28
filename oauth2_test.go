@@ -40,7 +40,7 @@ func TestClientCredentialsAuthOk(t *testing.T) {
 		},
 	)
 	if err != nil {
-		panic(err)
+		t.Fatal(err)
 	}
 	assert.NotEmpty(t, rtOut.AccessToken)
 	// log.Printf("access token: %s", rtOut.AccessToken)
