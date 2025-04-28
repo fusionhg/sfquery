@@ -2,7 +2,7 @@
 
 Allows a Go app to act as a Connected App and run SOQL queries against a Salesforce instance API.  Can automatically loop through multipage result sets from Salesforce and collate into a single slice of returned records.
 
-## Salesforce setup
+## Salesforce Setup
 
 * Create a new Connected App
 * Enable OAuth Settings
@@ -11,19 +11,19 @@ Allows a Go app to act as a Connected App and run SOQL queries against a Salesfo
 
 ## Basic Use
 
-Install:
+Install—
 ```bash
 GOPROXY=direct go get github.com/fusionhg/sfquery@latest
 ```
 
-Acquire access token:
+Acquire access token—
 ```go
 rtOut, err = sfquery.RequestOauth2Token(
     "{yourinstance}.salesforce.com",
     RequestOauth2TokenIn{
         GrantType:    "client_credentials",
         ClientId:     "{your Client ID here}",
-        ClientSecret: "{your Client Secret here}t",
+        ClientSecret: "{your Client Secret here}",
     },
 )
 if err != nil {
@@ -32,7 +32,7 @@ if err != nil {
 accessToken := rtOut.AccessToken
 ```
 
-Run query:
+Run query—
 ```go
 type TestContact struct {
 	Id       string
